@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sachintha Balasooriya — Robotics Engineer</title>
+<meta name="description" content="Sachintha Balasooriya — Robotics & Systems Engineer specializing in mechanical design, embedded firmware, and multi-agent robotics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F5;
+    --paper-2:#F1EFE7;
+    --ink:#1B1F1D;
+    --muted:#666f66;
+    --line:#E4E0D3;
+    --pine:#3F6B52;
+    --pine-dark:#2E5140;
+    --amber:#C98A3B;
+    --radius:14px;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  h1,h2,h3,h4{font-family:'Manrope',sans-serif;margin:0;letter-spacing:-0.01em;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;}
+  ul{margin:0;}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(250,249,245,.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;height:66px;}
+  .brand{font-weight:700;font-size:16px;text-decoration:none;color:var(--ink);}
+  .brand span{color:var(--pine);}
+  .links{display:flex;gap:30px;list-style:none;padding:0;margin:0 40px 0 auto;}
+  .links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;}
+  .links a:hover{color:var(--ink);}
+  .nav-cta{
+    border:1px solid var(--ink);border-radius:100px;
+    padding:8px 18px;font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);
+    transition:background .15s ease,color .15s ease;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px;}
+  .menu-btn span{display:block;width:20px;height:2px;background:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:168px 0 96px;overflow:hidden;}
+  .hero-grid{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(var(--line) 1px, transparent 1px);
+    background-size:26px 26px;
+    mask-image:linear-gradient(to bottom, black, transparent 80%);
+  }
+  .hero-inner{position:relative;}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:100px;
+    padding:6px 14px;font-size:13px;color:var(--muted);margin-bottom:22px;
+  }
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--pine);flex:none;}
+  .hero h1{font-size:46px;font-weight:800;color:var(--ink);}
+  .hero .role{font-size:19px;font-weight:600;color:var(--pine-dark);margin-top:10px;}
+  .hero .lede{font-size:16.5px;color:var(--muted);max-width:60ch;margin-top:16px;}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;}
+  .btn{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;padding:12px 24px;border-radius:100px;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--pine-dark);}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  /* ---------- section head ---------- */
+  .section-head{padding:70px 0 34px;}
+  .section-head .eyebrow{font-size:13px;font-weight:600;color:var(--pine);margin-bottom:8px;}
+  .section-head h2{font-size:28px;font-weight:700;}
+  .section-head p{color:var(--muted);font-size:15px;margin-top:8px;max-width:60ch;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;padding-bottom:70px;align-items:start;}
+  .about-grid p{color:#3d423d;font-size:15.5px;margin:0 0 14px;}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:14.5px;margin:0;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
+  .facts dt{color:var(--muted);font-weight:500;}
+  .facts dd{margin:0;font-weight:600;}
+
+  /* ---------- experience ---------- */
+  .timeline{display:flex;flex-direction:column;padding-bottom:70px;}
+  .tl-item{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:1px solid var(--line);}
+  .tl-date{font-size:13px;color:var(--muted);font-weight:500;padding-top:2px;}
+  .tl-role{font-size:16px;font-weight:700;}
+  .tl-org{font-size:14px;font-weight:600;color:var(--pine-dark);margin-top:2px;}
+  .tl-loc{font-size:13px;color:var(--muted);margin-top:2px;margin-bottom:10px;}
+  .tl-item p{font-size:14px;color:#3d423d;margin:0 0 10px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .chip{font-size:12px;font-weight:500;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;padding:4px 12px;color:var(--pine-dark);}
+
+  /* ---------- education ---------- */
+  #education{background:var(--paper-2);}
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-bottom:70px;}
+  .edu-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+  .edu-card h3{font-size:16px;margin-bottom:6px;}
+  .edu-school{font-size:14px;font-weight:600;color:var(--pine-dark);}
+  .edu-date{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  /* ---------- publications ---------- */
+  #publications .section-head{padding-bottom:12px;}
+  .pub-stats{display:flex;gap:36px;padding-bottom:36px;flex-wrap:wrap;}
+  .pub-stats .stat b{display:block;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:var(--ink);}
+  .pub-stats .stat span{font-size:13px;color:var(--muted);}
+  .pub-list{display:flex;flex-direction:column;gap:0;padding-bottom:26px;border-top:1px solid var(--line);}
+  .pub-item{display:flex;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .pub-item h4{font-size:14.5px;font-weight:600;margin-bottom:4px;}
+  .pub-item .authors{font-size:13px;color:var(--muted);}
+  .pub-item .venue{font-size:12.5px;color:var(--muted);margin-top:2px;font-style:italic;}
+  .pub-item .cited{white-space:nowrap;text-align:right;font-size:13px;color:var(--pine-dark);font-weight:600;flex:none;}
+  .pub-item .cited span{display:block;font-size:11.5px;color:var(--muted);font-weight:500;}
+  .pub-more{font-size:13.5px;font-weight:600;color:var(--pine-dark);text-decoration:none;border-bottom:1px solid var(--pine-dark);}
+
+  /* ---------- awards ---------- */
+  .awards-list{display:flex;flex-direction:column;padding-bottom:70px;}
+  .award-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);}
+  .award-item:first-child{border-top:1px solid var(--line);}
+  .award-icon{
+    width:34px;height:34px;border-radius:50%;background:var(--paper-2);flex:none;
+    display:flex;align-items:center;justify-content:center;color:var(--amber);
+  }
+  .award-icon svg{width:16px;height:16px;}
+  .award-text b{display:block;font-size:14.5px;font-weight:600;}
+  .award-text span{font-size:13px;color:var(--muted);}
+
+  /* ---------- skills ---------- */
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:34px 0 70px;}
+  .skill-cat{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:0;overflow:hidden;}
+  .skill-img{width:100%;aspect-ratio:16/9;background:var(--paper);border-bottom:1px solid var(--line);}
+  .skill-body{padding:20px 22px 22px;}
+  .skill-cat h4{font-size:15px;margin-bottom:8px;}
+  .skill-cat p{font-size:13.5px;color:var(--muted);margin:0;}
+
+  /* ---------- projects ---------- */
+  #projects{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 0 70px;}
+  .proj-card{
+    position:relative;text-align:left;font:inherit;color:inherit;cursor:pointer;
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:0;overflow:hidden;transition:border-color .15s ease, transform .15s ease;
+  }
+  .proj-card:hover{border-color:var(--pine);transform:translateY(-2px);}
+  .proj-card.disabled{cursor:default;}
+  .proj-card.disabled:hover{border-color:var(--line);transform:none;}
+  .featured-badge{
+    position:absolute;top:16px;right:16px;
+    display:flex;align-items:center;gap:4px;
+    font-size:11px;font-weight:600;color:var(--amber);
+    background:#FBF1E1;border-radius:100px;padding:3px 10px;
+  }
+  .proj-img{width:100%;height:auto;object-fit:contain;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .proj-body{padding:20px 22px 22px;}
+  .proj-tag{font-size:12px;font-weight:600;color:var(--pine);margin-bottom:6px;}
+  .proj-card h3{font-size:17px;margin-bottom:6px;}
+  .proj-card .cap{font-size:13.5px;color:var(--muted);margin:0;}
+  .proj-link{
+    display:flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:600;color:var(--ink);margin-top:16px;
+  }
+  .proj-link svg{width:13px;height:13px;}
+
+  /* ---------- contact ---------- */
+  .contact-box{
+    background:var(--ink);color:var(--paper);border-radius:20px;
+    padding:52px;display:flex;align-items:center;justify-content:space-between;gap:32px;
+    margin-bottom:80px;flex-wrap:wrap;
+  }
+  .contact-box h2{font-size:24px;font-weight:700;max-width:20ch;}
+  .contact-box p{color:#cfd4cd;font-size:14.5px;margin-top:10px;max-width:44ch;}
+  .contact-actions{display:flex;flex-direction:column;align-items:flex-start;gap:16px;}
+  .contact-box .btn-primary{background:var(--paper);color:var(--ink);}
+  .contact-box .btn-primary:hover{background:#e7e4d9;}
+  .social-row {justify-content: flex;display: flex;gap: 16px;width: 100%;}
+  .social-row a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(250,249,245,.25);display:flex;align-items:center;justify-content:center;}
+  .social-row svg{width:16px;height:16px;}
+  .social-row a:hover{border-color:var(--paper);}
+
+  footer.site-footer{padding:0 0 40px;text-align:center;font-size:13px;color:var(--muted);}
+
+  /* ---------- modal ---------- */
+  .modal-bg{
+    display:none;position:fixed;inset:0;z-index:100;
+    background:rgba(20,22,20,.72);
+    align-items:flex-start;justify-content:center;
+    overflow-y:auto;padding:60px 20px;
+  }
+  .modal-bg.open{display:flex;}
+  .modal{background:var(--paper);max-width:900px;width:100%;padding:44px;position:relative;border-radius:20px;}
+  .modal .close{
+    position:absolute;top:18px;right:20px;
+    background:var(--paper-2);border:none;border-radius:50%;width:32px;height:32px;
+    font-size:16px;cursor:pointer;color:var(--ink);
+  }
+  .modal h3{font-size:24px;margin-bottom:12px;}
+  .modal .tags{margin-bottom:20px;}
+  .modal .tags span{
+    display:inline-block;font-size:12px;font-weight:500;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:100px;
+    padding:4px 12px;margin:0 6px 6px 0;color:var(--pine-dark);
+  }
+  .modal .ph-lg{margin:18px auto 18px;background:var(--paper-2);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);}
+  .modal .ph-lg img{width:100%;height:auto;object-fit:contain;background:#fff;}
+  .proj-card .ph img{width:100%;height:100%;object-fit:cover;}
+  .modal h4{font-size:20px;margin:22px 0 8px;color:var(--pine-dark);font-weight:700;}
+  .modal p{font-size:14.5px;color:#333;}
+  .modal .repo{display:inline-block;margin-top:16px;font-size:13.5px;font-weight:600;border-bottom:1px solid var(--ink);}
+
+  table{border-collapse:collapse;width:100%;margin:8px 0;}
+  table th, table td{border:1px solid var(--line);padding:8px 12px;text-align:left;font-size:13.5px;}
+  table th{background:var(--paper-2);font-weight:600;}
+
+  @media (max-width:820px){
+    .proj-grid,.skill-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:34px;}
+    .links{display:none;}
+    .menu-btn{display:flex;}
+    .contact-box{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:560px){
+    .proj-grid,.skill-grid{grid-template-columns:1fr;}
+  }
+  /* stat grid */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--paper-2,#e2dcc9);border:1px solid var(--paper-2,#d8d2c2);margin:22px 0 10px;}
+  .stat{background:var(--paper,#f7f4ea);padding:18px 14px;text-align:center;}
+  .stat b{display:block;font-size:26px;letter-spacing:-.5px;color:var(--ink,#201c14);}
+  .stat span{display:block;font-size:11.5px;color:#7a7568;margin-top:4px;line-height:1.3;}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr);}}
+
+  
+  /* dark feature band */
+  .band{background:var(--ink,#201c14);color:var(--paper,#f4f0e6);padding:26px 24px;margin:20px 0;border-radius:2px;}
+  .band h2{font-size:17px;margin:0 0 14px;font-weight:600;}
+  .band ul.b{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:9px;}
+  .band ul.b li{font-size:13.5px;line-height:1.5;padding-left:16px;position:relative;color:#e8e3d6;}
+  .band ul.b li::before{content:"—";position:absolute;left:0;color:#8a8470;}
+  .band .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .band .chips span{font-size:11px;padding:5px 10px;border:1px solid #4a4638;border-radius:999px;color:#c9c3b0;}
+
+  .modal .nsp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px 16px;margin:14px 0 8px}
+  .modal .nsp-stat b{display:block;font:800 clamp(2rem,5vw,3rem)/1 'Bodoni Moda',Georgia,serif;color:#8c2f5a;letter-spacing:-.02em}
+  .modal .nsp-stat span{display:block;margin-top:6px;font-size:13px;line-height:1.35;color:#333}
+  .modal .nsp-facts{display:flex;flex-wrap:wrap;gap:6px 20px;margin:12px 0;font-size:13px;font-weight:600;color:#2f5d47}
+  .modal .nsp-tl{margin:16px 0}
+  .modal .nsp-tl-title{font:500 1.15rem 'Bodoni Moda',Georgia,serif;margin-bottom:10px;color:#10201b}
+  .modal .nsp-tl ol{list-style:none;display:flex;gap:6px;padding:0;margin:0}
+  .modal .nsp-tl li{border-top:8px solid #2f5d47;padding-top:8px;font-size:12px;line-height:1.3;min-width:58px;color:#333}
+  .modal .nsp-tl li:nth-child(2){border-color:#8c2f5a}
+  .modal .nsp-tl li:nth-child(3){border-color:#10201b}
+  .modal .nsp-tl li b{display:block;font:800 1.15rem 'Bodoni Moda',Georgia,serif;color:#10201b}
+  .modal .nsp-tl .t1{flex:10}.modal .nsp-tl .t2{flex:4}.modal .nsp-tl .t3{flex:3}.modal .nsp-tl .t4{flex:20}
+  .modal .nsp-tl p{font-size:13px;color:#2f5d47;margin-top:10px}
+  @media(max-width:520px){.modal .nsp-tl ol{flex-direction:column}.modal .nsp-tl li{flex:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Career Portfolio<span></span></a>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="#contact" class="nav-cta">contact</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <h1>Sachintha Balasooriya</h1>
+    <div class="role">Robotic Systems Lead Engineer</div>
+    <p class="lede">Robotics engineer taking autonomous platforms from initial mechanism to production code — currently architecting field-scouting rovers and closed-loop sericulture automation.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About</div>
+      <h2>Full-stack hardware, firmware &amp; software architecture</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>Robotics Systems Lead specializing in complete architectural ownership of autonomous systems. Experienced in driving complex multi-agent platforms, humanoid robotics, and industrial automation from initial concept through regional deployment.</p>
+        <p>Core technical strengths span FEA-driven structural design (SolidWorks/ANSYS), deterministic real-time firmware (ESP32/FreeRTOS), custom control algorithms, and ROS 2 navigation pipelines.</p>
+      </div>
+      <dl class="facts">
+        <dt>Based in</dt><dd>Osaka / Kyoto, Japan</dd>
+        <dt>Currently</dt><dd>Robotic Systems Lead Engineer, Pentalink Inc.</dd>
+        <dt>Focus areas</dt><dd>ROS 2 · Mechanical Design · Embedded Firmware</dd>
+        <dt>Experience</dt><dd>3 years in robotics across SE &amp; East Asia</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+ <!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've built things</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">Jun 2025 — Present</div>
+        <div>
+          <div class="tl-role">Robotic Systems Lead Engineer</div>
+          <div class="tl-org">Pentalink Inc.</div>
+          <div class="tl-loc">Kyoto, Japan · On-site</div>
+          <ul class="tl-duties">
+            <li><strong>Systems Architecture:</strong> Directing end-to-end mechanical, embedded, and software architecture for 6×6 AGVs in unstructured outdoor environments.</li>
+            <li><strong>Autonomy &amp; Navigation:</strong> Leading the implementation of LiDAR-inertial SLAM pipelines, custom Nav2 plugins, and real-time terrain classification algorithms.</li>
+            <li><strong>Technical Stewardship:</strong> Serving as primary technical authority across engineering, investors, and vendors—authoring architecture docs and defining strategy to scale robotics operations.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">ROS 2</span>
+            <span class="chip">Nav2</span>
+            <span class="chip">LiDAR SLAM</span>
+            <span class="chip">Technical Strategy</span>
+            <span class="chip">Systems Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Jun 2024 — Jun 2025</div>
+        <div>
+          <div class="tl-role">Robotics Engineer</div>
+          <div class="tl-org">Pentalink Inc.</div>
+          <div class="tl-loc">Kyoto, Japan · On-site</div>
+          <ul class="tl-duties">
+            <li><strong>Full-Lifecycle Engineering:</strong> Owned full-stack mechatronics, firmware, and software development for multi-agent closed-loop automation platforms.</li>
+            <li><strong>Control &amp; Middleware:</strong> Developed low-level driver protocols, kinematic motion profiling, and distributed Flask/MQTT coordination layers for real-time task allocation.</li>
+            <li><strong>Mechanism &amp; Mechatronic Design:</strong> Designed specialized mechanisms for harsh atmospheric conditions, positive-pressure airlock transfer interfaces, and automated self-calibration routines.</li>
+            <li><strong>Mobile Platforms:</strong> Engineered Three different custom AGV prototypes for factory floor automation with active self-leveling suspension systems.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">CAN Bus</span>
+            <span class="chip">Flask/MQTT</span>
+            <span class="chip">3D Modeling</span>
+            <span class="chip">Mechatronics</span>
+            <span class="chip">Embedded Firmware</span>
+          </div>
+        </div>
+      </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2022 — 2024</div>
+          <div>
+            <div class="tl-role">Research Assistant (Part-time)</div>
+            <div class="tl-org">Kyoto University of Advanced Science (KUAS)</div>
+            <div class="tl-loc">Kyoto, Japan</div>
+            <ul>
+              <li><strong>Agricultural Robotics & Autonomy:</strong> Designed a novel 6×6 drivetrain from the ground up for a 30 kg-payload rover in partnership with an industrial agriculture firm—integrating LiDAR/GPS navigation across multiple revisions for rough-terrain coffee plantation operations.</li>
+              <li><strong>Precision Kinematics & Mechanisms:</strong> Developed a humanoid robot eye mechanism featuring a compliant, zero-backlash joint engineered for fast, damped human-motion mimicry.</li>
+            </ul>
+            <div class="chip-row">
+              <span class="chip">LiDAR/GPS Nav</span>
+              <span class="chip">Drivetrain Design</span>
+              <span class="chip">Humanoid Robotics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2020 — 2022</div>
+          <div>
+            <div class="tl-role">Assistant Lecturer</div>
+            <div class="tl-org">Sri Lanka Technological Campus (SLTC)</div>
+            <div class="tl-loc">Padukka, Sri Lanka</div>
+            <ul>
+              <li><strong>Curriculum & Instruction:</strong> Module lead for Analog Electronics, Robotics & Automation, and Embedded Systems—authoring course materials, lab curricula, and lecture series.</li>
+              <li><strong>Research & Advisory:</strong> Supervised student research within the Embedded Systems & Robotics group and served on advisory committees for regional STEM initiatives.</li>
+            </ul>
+            <div class="chip-row"><span class="chip">Teaching</span><span class="chip">Embedded Systems</span><span class="chip">Curriculum Design</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2019 — 2020</div>
+          <div>
+            <div class="tl-role">Electronics &amp; Design Engineer</div>
+            <div class="tl-org">Vulcan Augmetics</div>
+            <div class="tl-loc">Ho Chi Minh City, Vietnam</div>
+            <ul>
+              <li><strong>Prosthetic Hardware R&D:</strong> Modeled and prototyped multi-articulating prosthetic arms, wrists, and fingers—improving structural integrity, safety, and control responsiveness.</li>
+              <li><strong>Product Optimization & Team Leadership:</strong> Audited legacy product lines to optimize unit costs and led a team of electronics technicians and fabricators through hardware iteration.</li>
+            </ul>
+            <div class="chip-row"><span class="chip">Prosthetics</span><span class="chip">Mechanical Design</span><span class="chip">Team Leadership</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Projects</div>
+        <h2>Selected work</h2>
+        <p>2019 – Now. Field and agricultural robotics built across mechanical, firmware, and software.</p>
+      </div>
+      <div class="proj-grid">
+        <button class="proj-card" onclick="openModal('fsr')">
+          <div class="proj-img"><img src="Images/Screenshot 2026-09-17 144015.png" alt="FSR field-scouting robot"></div>
+          <div class="proj-body">
+          <div class="proj-tag">ROS2 · Nav2 · SolidWorks · LIO SLAM · CAN</div>
+          <h3>Autonomous Field-Scouting Robots</h3>
+          <p class="cap">Six-wheel autonomous field-scouting robot family for orchards and vineyard rows.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+        <button class="proj-card" onclick="openModal('nsp')">
+          <div class="proj-img"><img src="Images/Screenshot 2026-09-17 144054.png" alt="NSP sericulture platform"></div>
+          <div class="proj-body">
+          <div class="proj-tag">Flask/MQTT · FreeRTOS · CAN bus</div>
+          <h3>NSP — Sericulture Platform</h3>
+          <p class="cap">Automated silkworm-rearing system: serviced by coordinated robotic agents.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+        <button class="proj-card" onclick="openModal('miyama2')">
+          <div class="proj-img"><img src="Images/Screenshot 2026-09-22 134412.png" alt="Miyama Project"></div>
+          <div class="proj-body">
+          <div class="proj-tag">Python · Flask · JS · MQTT · SQLite</div>
+          <h3>Miyama Project</h3>
+          <p class="cap">Cleanroom pod-handling & control suite: scheduler, task history, etc.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+        <button class="proj-card" onclick="openModal('delta')">
+          <div class="proj-img" style="max-width:80%; margin: auto;"><img src="Images/Picture11.png" alt="Delta Robotic Arm"></div>
+          <div class="proj-body">
+          <div class="proj-tag">SolidWorks · Compliant Mechanisms</div>
+          <h3>Delta Robotic Arm</h3>
+          <p class="cap">Anisotropically flexible delta arm for food- and plant-safe environments.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+        <button class="proj-card" onclick="openModal('cra')">
+          <div class="proj-img"><img src="Images/Picture141.png" alt="Autonomous robot for Proximal Data Collection Amongst Foliage"></div>
+          <div class="proj-body">
+          <div class="proj-tag">ROS 2 · ORB-SLAM3 · YOLO · Ardupilot</div>
+          <h3>Autonomous robot For Proximal Data Collection Amongst Foliage</h3>
+          <p class="cap">Compliant delta-arm platform that autonomously detects plants and images pathogens beneath the canopy.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+        <button class="proj-card" onclick="openModal('humanoid')">
+          <div class="proj-img"><img src="Images/DSC_1464.JPG" alt="Humanoid Eye Mechanism"></div>
+          <div class="proj-body">
+          <div class="proj-tag">Compliant Joints · Humanoid Robotics</div>
+          <h3>Humanoid Eye Mechanism</h3>
+          <p class="cap">Compact, zero-backlash human eye mechanism for human-like motion research.</p>
+          <div class="proj-link">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Skills</div>
+        <h2>Tools of the trade</h2>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-cat"><div class="skill-img"><img src="Images/ros.jpg" alt="ROS"></div><div class="skill-body"><h4>Robotics &amp; Autonomy</h4><p>ROS / ROS 2, Nav2, SLAM (LiDAR, visual, depth), motion planning</p></div></div>
+        <div class="skill-cat"><div class="skill-img"><img src="Images/SolidWorks.png" alt="SolidWorks"></div><div class="skill-body"><h4>Mechanical Design &amp; Simulation</h4><p>SolidWorks (9+ yrs) incl. topology optimization, FEA in Creo Parametric</p></div></div>
+        <div class="skill-cat"><div class="skill-img"><img src="Images/Picture16.png" alt="PlatformIO"></div><div class="skill-body"><h4>Embedded &amp; Electronics</h4><p>PlatformIO, Atmel Studio, MPLAB X, Eagle CAD, Proteus, Siemens Simatic EKB, ABB RobotStudio</p></div></div>
+        <div class="skill-cat"><div class="skill-img"><img src="Images/Picture17.png" alt="Flask"></div><div class="skill-body"><h4>Systems &amp; Backend</h4><p>Flask, MQTT, SQL, Linux, Git</p></div></div>
+        <div class="skill-cat"><div class="skill-img"><img src="Images/Picture19.png" alt="TensorFlow"></div><div class="skill-body"><h4>AI / Computer Vision</h4><p>TensorFlow, PyTorch, YOLO (Ultralytics), OpenCV</p></div></div>
+        <div class="skill-cat"><div class="skill-img"><img src="Images/1716278960382.png" alt="C++"></div><div class="skill-body"><h4>Languages</h4><p>C, C++, Python, Java</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Education</div>
+        <h2>Academic foundation</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>M.Sc., Robotics &amp; Mechatronics</h3>
+          <div class="edu-school">Kyoto University of Advanced Science (KUAS)</div>
+          <div class="edu-date">Super-E Stipend Scholarship · GPA: 4.0</div>
+        </div>
+        <div class="edu-card">
+          <h3>B.Eng., Engineering (Honors)</h3>
+          <div class="edu-school">RMIT University</div>
+          <div class="edu-date">Best Performance for Outstanding Academic Achievement · GPA: 3.3</div>
+        </div>
+        <div>Graduation certificates and transcripts upon request.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Publications</div>
+        <h2>Research articles</h2>
+        <p>12 peer-reviewed publications in robotics, SLAM, and autonomous navigation (IEEE, RSJ).</p>
+      </div>
+      <div class="pub-stats">
+        <div class="stat"><b>51</b><span>Citations (all)</span></div>
+        <div class="stat"><b>48</b><span>Citations (since 2021)</span></div>
+        <div class="stat"><b>3</b><span>h-index</span></div>
+        <div class="stat"><b>2</b><span>i10-index</span></div>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div><h4>Machine learning-based air pollution prediction model</h4><div class="venue">2023 IEEE IAS Global Conference on Emerging Technologies (GlobConET)</div><div class="authors"> Award: Best research paper of the conference </div></div>
+          <div class="cited">18<span>2023</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Novel low-power NRF24L01 based wireless network design for autonomous robots</h4><div class="venue">2019 25th Asia-Pacific Conference on Communications (APCC)</div></div>
+          <div class="cited">10<span>2019</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Novel adaptive control method for BLCD drive of electric bike for Vietnam environment</h4><div class="venue">IOP Conference Series: Materials Science and Engineering 819 (1), 012017</div></div>
+          <div class="cited">9<span>2020</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Ultra-Low Power Wireless Sensor Network for Air Quality Monitoring System</h4><div class="venue">2022 International Conference on Green Energy, Computing and Sustainable Technology</div></div>
+          <div class="cited">3<span>2022</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Forecasting model comparison for soil moisture to obtain optimal plant growth</h4><div class="venue">2022 IEEE International IOT, Electronics and Mechatronics Conference</div><div class="authors"> Award: Certificate of Best Presenter </div></div>
+          <div class="cited">3<span>2022</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Optimized Hardware Design of Low Power and Low Cost Self Driving Multi-Purposes Robotised Platform</h4><div class="venue">2019 International Symposium on Electrical and Electronics Engineering (ISEE)</div></div>
+          <div class="cited">3<span>2019</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Development of the smart localization techniques for low-power autonomous rover for predetermined environments</h4><div class="venue">2020 RIVF International Conference on Computing and Communication</div></div>
+          <div class="cited">2<span>2020</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Innovative Path Planning Algorithm for an Autonomous Robot with Low Computational Cost</h4><div class="venue">2019 International Conference on Advanced Computing and Applications (ACOMP)</div><div class="authors"> Award: Best Paper Award </div></div>
+          <div class="cited">2<span>2019</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Autonomous Robotic Platform for Proximal Data Collection Amongst Foliage Utilizing an Anisotropically Flexible Manipulator</h4><div class="venue">2024 IEEE/SICE International Symposium on System Integration (SII), 1498–1503</div></div>
+          <div class="cited">—<span>2024</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Development of a delta-type arm robot with anisotropic flexibility for sensitive applications</h4><div class="venue">Proceedings of the RSJ Annual Conference, Vol. 40</div></div>
+          <div class="cited">1<span>2022</span></div>
+        </div>
+        <div class="pub-item">
+          <div><h4>Developments in Laser Range Sensors to Improve Precision of High Speed, Continuous Motion Manufacturing Systems</h4><div class="venue">—</div></div>
+          <div class="cited">—<span>—</span></div>
+        </div>
+      </div>
+      <a class="pub-more" href="https://scholar.google.com/citations?hl=en&user=kyfeIfsAAAAJ" target="_blank" rel="noopener">Full list on Google Scholar →</a>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Recognition</div>
+        <h2>Honors &amp; awards</h2>
+      </div>
+      <div class="awards-list">
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Special Recruitment, Graduate School</b><span>Amano Institute of Technology — 2023</span></div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Super-E Stipend Scholarship</b><span>Kyoto University of Advanced Science — 2021 &amp; 2023</span></div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Certificate of Best Presenter</b><span>"Forecasting Model Comparison for Soil Moisture to Obtain Optimal Plant Growth" — IEMTRONICS International Conference, Toronto, Canada, 2022</span></div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Best Paper</b><span>International Conference on Advanced Computing and Applications (ACOMP), Ho Chi Minh City, Vietnam — 2019</span></div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Best Performance for Outstanding Academic Achievement (Year 4)</b><span>Batch topper, highest GPA — RMIT University, 2019</span></div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 13 7 22l5-3 5 3-1.5-9"/></svg></div>
+          <div class="award-text"><b>Excellence in Research &amp; Engineering Performance</b><span>Capstone project — RMIT Technology and Science Day, 2019</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Let's talk about what you want to build.</h2>
+          <p>Open to new projects and conversations in field robotics, embedded systems, and mechatronics.</p>
+        </div>
+        <div class="contact-actions">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=SachinthaBalasooriya1997@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">SachinthaBalasooriya1997@gmail.com</a>
+          <div class="social-row">
+            <a href="https://www.github.com/titanX108" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+            <a href="https://www.linkedin.com/in/sachintha-balasooriya-2388b5191/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://scholar.google.com/citations?hl=en&user=kyfeIfsAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></a>
+            <a href="https://www.researchgate.net/profile/Sachintha-Balasooriya?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate"><svg viewBox="0 0 27 24" fill="none" stroke="none"><text x="1" y="21" font-size="20" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">R</text><text x="16" y="11" font-size="13" font-family="Arial, sans-serif" font-weight="700" fill="currentColor">G</text></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">© 2026 Sachintha Balasooriya</footer>
+
+<!-- Modals (content unchanged from original) -->
+<div class="modal-bg" id="modal-fsr" onclick="closeOnBg(event,'fsr')">
+  <div class="modal">
+    <style>
+      /* Stat row spacing: equal-width columns so wide numbers can't run into the next stat */
+      #modal-fsr .nsp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px;}
+      #modal-fsr .nsp-stats .nsp-stat{min-width:0;}
+      #modal-fsr .nsp-stats .nsp-stat b{display:block;white-space:nowrap;font-size:clamp(24px,4vw,30px);line-height:1.15;margin-bottom:4px;}
+    </style>
+    <button class="close" onclick="closeModal('fsr')">✕</button>
+    <h3>FSR Series: Autonomous Field-Scouting Robots for Precision Agriculture</h3>
+    <div class="tags">
+      <span>SolidWorks FEA</span>
+      <span>ROS 2</span>
+      <span>Nav2</span>
+      <span>PCL</span>
+      <span>LiDAR-Inertial SLAM (LIO-SAM)</span>
+      <span>CAN Bus</span>
+    </div>
+    <div class="ph-lg"><img src="Images/Picture1.png" alt="FSR field-scouting robot"></div>
+
+    <h4>Overview</h4>
+    <p>The FSR (Field Scouting Robot) line is a six-wheel autonomous platform for orchard and vineyard rows, built to replace unscalable manual scouting with reliable 24/7 crop monitoring. Rather than adapting off-the-shelf rovers, I solved suspension, traction, power, and navigation as one integrated system, so the sensor deck keeps the steady canopy view that vision-based health detection needs in unstructured terrain.</p>
+    <p><strong>My role:</strong> I designed and developed the full stack: chassis, custom airless-tire FEA, drivetrain and wiring architecture, and navigation/sensing software.</p>
+
+    <div class="nsp-stats" aria-label="Key results">
+      <div class="nsp-stat" style="text-align:center;"><b>7.5 h</b><span>18.7 km at 2.6 km/h average</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>30°</b><span>incline climb with a 20 kg payload</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>18 W</b><span>average drivetrain power</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>400 Hz</b><span>CAN update rate for real-time slip detection</span></div>
+    </div>
+
+    <h4>Mechanical Platform</h4>
+    <p><strong>Canopy-stable chassis:</strong> keeps the sensor deck steady on sloped, rutted rows, so most terrain disturbance stays at the wheel, not the deck.</p>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li>Three independently articulated axles (front, center, back), each rolling about its own pivot, with the center chassis also pitching relative to the front and back pairs.</li>
+      <li>Measured isolation: 20° front-axle roll → 9° body roll; 5° middle-axle roll → 4° body roll; 16° back-axle roll → 6.5° body roll.</li>
+    </ul>
+    <div class="ph-lg"><img src="Images/2026-09-17 13-10-37.gif" alt="Chassis axle articulation isolating body roll"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: Canopy-stable chassis.</p>
+
+    <p><strong>Custom airless tire:</strong> a lugged, TPU-printed tire with an internal spoke structure that removes punctures in thorny rows and houses the in-wheel motor. Two spoke patterns were compared in SolidWorks FEA; load cases for the selected production design:</p>
+    <table>
+      <thead><tr><th>Load case</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>20 N vertical (~12 kg/wheel)</td><td>0.357 mm max displacement</td></tr>
+        <tr><td>2 Nm torsion at contact patch</td><td>2.8 mm local tread deformation</td></tr>
+        <tr><td>10 N lateral</td><td>1.9 mm depending on load point</td></tr>
+      </tbody>
+    </table>
+    <div class="ph-lg" style="margin-top:20px;"><img src="Images/Picture2.png" alt="Airless tire FEA results"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 2: Airless tire, designed and analyzed in SolidWorks FEA.</p>
+
+    <p><strong>Anti-roll linkage:</strong> the first prototype (3D-printed spherical-bearing rocker arm with slide joint) failed under load from spacer-to-arm collision, joint slippage, and a high-stress pivot region. It was replaced by a compact bevel differential-gear mechanism, machined in metal and fully enclosed under a shield: same kinematic function, smaller, lighter, no slipping.</p>
+    <!-- ADD IMAGE: bevel differential anti-roll linkage -->
+
+    <h4>Drive and Control</h4>
+    <p><strong>CAN bus: 400 Hz per-motor slip detection.</strong> Catching wheel slip means reading motor current fast enough to tie a current drop to loss of ground contact, on a bus that also carries real-time control commands and status polling for all six motors. The first implementation bottlenecked on three causes:</p>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Blocking timeouts:</strong> one slow motor stalled the entire round-robin polling cycle.</li>
+      <li><strong>Frame-type parsing:</strong> frame types 0x02 and 0x12 extract motor IDs differently, so early parser logic misattributed telemetry.</li>
+      <li><strong>TX collisions:</strong> near-simultaneous replies dropped frames.</li>
+    </ul>
+    <p>The fix was a non-blocking request carousel that sorts responses into a unified 6-motor state array regardless of arrival order. Disambiguating the frame types and refining bus arbitration resolved the collisions, pushing throughput to 400 Hz per motor.</p>
+    <!-- ADD: CAN bitrate, bus load at 400 Hz, and what slip detection triggers -->
+    <!-- ADD IMAGE: CAN telemetry or slip-detection plot -->
+
+    <p><strong>Pivoting under load.</strong> Standard skid-steer pivoting assumes the chassis can overcome lateral tire scrub, but across six loaded, high-traction contact patches the combined static ground friction exceeded motor torque, stalling the pivot. An active wheel-speed strategy keeps all six wheels continuously spinning relative to the ground during a turn, holding the contact patches in the lower-resistance kinetic friction regime so the available torque executes a clean in-place pivot under full load.</p>
+    <!-- ADD: payload at which the pivot stalls without this strategy vs. with it -->
+    <div class="ph-lg" style="max-width:70%;margin:16px auto 8px;"><img src="Images/Picture3.png" alt="Wheel speeds during tight turns"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 3: Wheel speeds during tight turns, modulated to minimize friction at the tire contact point.</p>
+
+    <h4>Autonomy</h4>
+    <p><strong>LiDAR-inertial SLAM in sparse open fields.</strong> Flat ground and low, repetitive canopy cause severe geometric degeneracy: in FAST-LIO2, aggressive high-frequency frame updates kept matching against ambiguous geometry, producing noise, rapid drift, and localization failure. Default SLAM architectures also assumed idealized flat motion, giving an incorrect transform tree for a rover on unstabilized, uneven terrain where pitch and roll distort frame relationships. LIO-SAM, adapted to sparse agricultural rows, was the solution:</p>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Transform tree and fusion logic:</strong> corrected the <code>map → odom</code> hierarchy and reworked the <code>TransformFusion</code> node logic to account for unstabilized terrain dynamics.</li>
+      <li><strong>IMU calibration:</strong> normalized raw IMU gravity units for a reliable, drift-free tilt reference.</li>
+      <li><strong>Scan geometry:</strong> re-tuned scan-matching parameters for the Livox MID360's non-uniform rosette pattern.</li>
+    </ul>
+    <!-- ADD: before/after drift or localization error over a row length -->
+    <div class="ph-lg" style="max-width:70%;margin:16px auto 8px;"><img src="Images/fdd24.gif" alt="Autonomous driving on uneven terrain"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 4: Autonomous driving on uneven terrain.</p>
+
+    <p><strong>Terrain-aware traversability.</strong> Ruts, banks, and drop-offs are a continuous property of the ground, not discrete objects a LiDAR return flags, so a standard obstacle layer can't represent them. A ROS 2 node runs PCL surface-normal estimation on the deskewed LIO-SAM point cloud and classifies terrain in real time as traversable, steep, vertical, or cliff, publishing each class as its own cloud. Nav2 treats "traversable" as free space and everything else as an obstacle region.</p>
+    <div class="ph-lg"><img src="Images/Picture4.png" alt="Terrain-aware obstacle detection"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 5: Terrain-aware obstacle detection.</p>
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-nsp" onclick="closeOnBg(event,'nsp')"><div class="modal">
+    <style>
+      /* Stat row spacing fix: equal-width columns so wide numbers like 25,000 can't run into the next stat */
+      .modal .nsp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px;}
+      .modal .nsp-stats .nsp-stat{min-width:0;}
+      .modal .nsp-stats .nsp-stat b{display:block;white-space:nowrap;font-size:clamp(24px,4vw,30px);line-height:1.15;margin-bottom:4px;}
+    </style>
+    <button class="close" onclick="closeModal('nsp')">✕</button>
+    <h3>NSP — Next-Gen Sericulture Platform</h3>
+    <div class="tags"><span>FreeRTOS</span><span>MQTT</span><span>CAN bus</span><span>Flask</span><span>Multi-Agent Coordination</span></div>
+    <div class="ph-lg"><img src="Images/nsp_rack.jpg" alt="NSP unit — sealed rack in thermal enclosure"></div>
+
+    <h4>Overview</h4>
+    <p>NSP is Pentalink's automated silkworm-rearing system: a sealed, HEPA-filtered rack of roughly 200 pods, served by three coordinated robots (a conveyor, an air lock hatch, and a carriage), each with its own mechanism and real-time firmware. The challenge was to automate rearing at a cost and footprint that make sense without ever compromising the sealed, contamination-free environment the colony depends on.</p>
+    <p><strong>My role:</strong> I owned the engineering end to end, designing and building the full line from mechanism and sensing through firmware, motion control, and multi-agent coordination. It has been in operation for 24 months.</p>
+
+    <div class="nsp-stats" aria-label="Key results">
+      <div class="nsp-stat"><b>~1/5</b><span>the cost of a similarly sized PLC-based industrial facility running the same operation</span></div>
+      <div class="nsp-stat"><b>45 s</b><span>per pod cycle, down from ~3 min (3–5× faster)</span></div>
+      <div class="nsp-stat"><b>25,000</b><span>pod cycles in 24 months of operation</span></div>
+      <div class="nsp-stat"><b>2.18M</b><span>usable cocoons per unit, per year</span></div>
+    </div>
+
+    <p>Pods are fed by the conveyor to the air lock hatch, which passes them into the sealed room, where the carriage stores and retrieves them. No one ever enters the room.</p>
+
+    <div class="nsp-tl" aria-label="Stage timing of one pod cycle">
+      <div class="nsp-tl-title">One pod, four stages</div>
+      <ol>
+        <li class="t1"><b>~10 s</b>Conveyor to hatch</li>
+        <li class="t2"><b>~4 s</b>Hatch docking</li>
+        <li class="t3"><b>~3 s</b>Hand-off, shutter closes</li>
+        <li class="t4"><b>&lt;20 s</b>Placement, horizontal and vertical at once</li>
+      </ol>
+      <p>Full cycle: about 45 seconds. The legacy system took about 3 minutes.</p>
+    </div>
+
+    <h4>Multi-Agent Coordination</h4>
+    <p>Three agents handing off one pod in sequence are only fast if each stages itself ahead of the pod's arrival, not after being told to.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Peer-to-peer broadcasting:</b> a Flask server handles human input and top-level job assignment; the conveyor, hatch, and carriage exchange intent directly over MQTT via their own Wi-Fi modules.</li>
+      <li style="margin-bottom:8px;"><b>Predictive staging:</b> agents broadcast near-term intent instead of waiting on a server command, so the hatch opens before a pod arrives and the carriage positions itself before docking finishes.</li>
+      <li style="margin-bottom:8px;"><b>Sub-second hand-off:</b> this peer coordination keeps dead time between adjacent stages under a second.</li>
+      <li><b>Throughput:</b> a 4× speedup over the legacy 3-minute place-based system, driving the 3&ndash;5× overall gain.</li>
+    </ul>
+
+    <div class="ph-lg"><img src="Images/system_architecture.jpg" alt="NSP control flow: control server, WiFi/MQTT, execution agents, CAN bus actuators"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: Control flow : server, Wi-Fi/MQTT, execution agents, CAN-bus actuators.</p>
+
+    <h4>Embedded Firmware Architecture</h4>
+    <p>Each agent runs this coordination on one low-power microcontroller that also handles real-time motion control and sensing, so network latency can never jitter a motor command</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Isolated tasks:</b> each agent runs FreeRTOS with motion control, sensing, and networking as separate tasks instead of one shared loop, so a slow or blocking operation on one can never stall another. The motion-profile calculation gets its own task, kept off the CAN-bus command path so its heavier computation can never jitter actuator output.</li>
+      <li style="margin-bottom:8px;"><b>Task synchronization:</b> semaphores mediate all inter-task data exchange through a central governing task on the agent's MCU, so tasks can't corrupt shared data or stall one another.</li>
+      <li style="margin-bottom:8px;"><b>Shared awareness without the server:</b> each agent publishes its state to a dedicated MQTT topic and subscribes to its peers', giving shared state awareness without server arbitration; lockstep handoffs use an alternating publish/acknowledge handshake.</li>
+      <li style="margin-bottom:8px;"><b>Heartbeat startup gating:</b> a steady server heartbeat acts as a system-wide watchdog, so an agent that can't see it at startup reboots and reconnects rather than acting on stale information.</li>
+    </ul>
+
+    <h4>Precision Motion Profiling</h4>
+    <p>Time is essential when serving a large number of pods, so the carriage is optimized to maximize delivery and retrieval speed. Its actuators run Sigmoid motion profiles with payload-scheduled acceleration and deceleration profiles, giving smooth motion throughout every task.</p>
+    <div class="ph-lg"><img src="Images/download (3).png" alt="Precision Motion Profiling"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 2: Motion Profiling for different payloads.</p>
+
+    <h4>Status</h4>
+    <p><strong>NSP-3</strong> — built and operating, benchmarked against NSP-2 above.</p> 
+    <p> <strong>NSP-4 (next)</strong> — training AI to identify individual silkworms and track health, toward fully automating feeding and cleaning.</p>
+    <div class="ph-lg"><img src="Images/1764666403144.gif" alt="Training imagery for individual silkworm identification"></div>
+
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-miyama2" onclick="closeOnBg(event,'miyama2')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('miyama2')">✕</button>
+    <h3>Miyama Project: Cleanroom Material-Handling & Control Suite</h3>
+    <div class="tags">
+      <span>Python</span><span>Flask</span><span>REST API</span><span>MQTT</span><span>SQLAlchemy</span><span>SQLite</span><span>JavaScript</span><span>SwitchBot API</span>
+    </div>
+    <div class="ph-lg"><img src="Images/Picture7.png" alt="Miyama Project Cleanroom Control Suite dashboard"></div>
+
+    <h4>Overview</h4>
+    <p>The Miyama Project is the server-side software and operator interface that control the robotics in the facility. A Flask backend turns operator actions into validated carriage commands, keeps the state of every pod position, runs scheduled workflows, monitors the environment, and records every operation, all behind one browser-based interface.</p>
+    <p>The core engineering problem is consistency: keeping physical pod locations, operator commands, carriage messages, equipment state, sensor data, stored records, and image evidence in agreement. It turns a collection of physical cleanroom operations into a single software-controlled workflow.</p>
+    <p><strong>My role:</strong> I developed the full software stack: server architecture, backend APIs, task protocol, state and database layer, sensor integration, and the operator interface.</p>
+    <!-- ADD if available: where it runs and since when, plus any usage numbers (operations executed, images captured) -->
+
+    <h4>Architecture</h4>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Frontend:</strong> one browser application (Dashboard, Manual Control, Scheduler, and Task History) with rack selection, instead of a separate tool per function.</li>
+      <li><strong>Backend:</strong> Flask application exposing REST endpoints and coordinating system state.</li>
+      <li><strong>Messaging:</strong> MQTT carries task commands to the carriage.</li>
+      <li><strong>Persistence:</strong> SQLite through SQLAlchemy for pod state and operation records, JSON files for schedules, and date-organized image storage.</li>
+      <li><strong>Sensors:</strong> SwitchBot API polled for environmental device status.</li>
+    </ul>
+      <div class="ph-lg"><img src="Images/Picture6.png" alt="Miyama Project Cleanroom Control Suite dashboard"></div>
+      <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: Miyama software architecture.</p>
+
+    <h4>Command Pipeline: Validation and Task Protocol</h4>
+    <p style="text-align:center;font-size:18px;color:#333;margin:10px 0;"><strong>Operator UI</strong> → <strong>REST endpoint</strong> → <strong>validation</strong> → <strong>task encoding</strong> → <strong>MQTT</strong> → <strong>carriage</strong></p>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Unified position IDs:</strong> the physical rack is modeled as a coordinate grid (side, column, row), and one ID scheme addresses every pod position identically across the UI, database, and hardware commands.</li>
+      <li><strong>State-aware validation:</strong> each carriage command (Take Out, Put In, Go To, Pick/Drop at the Air Lock Hatch) is checked against current pod occupancy and the previous action, and invalid sequences are rejected before anything is published.</li>
+      <li><strong>Compact task protocol:</strong> the server encodes each task (type, coordinates, timing) into a compact character-based command and decodes it back, keeping carriage communication predictable and lightweight.</li>
+      <li><strong>HTTP-to-MQTT bridge:</strong> Flask converts each validated HTTP request into an MQTT command published to the carriage.</li>
+      <li><strong>Replayable workflows:</strong> a drag-and-drop scheduler turns one-off commands into saved, reorderable, multi-step sequences stored as JSON and replayed on demand.</li>
+    </ul>
+
+    <h4>State and Traceability</h4>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Persistent pod state:</strong> SQLite through SQLAlchemy stores each position's current status and when it last changed, updating as operations occur so the rack view reflects current pod state.</li>
+      <li><strong>Operation history:</strong> every action, whether manual, scheduled, or an image capture, writes a timestamped record (operation, rack side, column, row) and is exposed through a filterable history endpoint.</li>
+      <li><strong>Image records:</strong> captured images are logged the same way and tied to the pod position and event that produced them, then stored in date-organized folders instead of as anonymous files.</li>
+    </ul>
+    
+    <h4>Environmental Monitoring</h4>
+    <ul style="font-size:0.9em;font-family:inherit;">
+      <li><strong>Sensor coverage:</strong> a CO₂ meter and thermo-hygrometers inside and outside the cleanroom/building, reporting temperature, humidity, CO₂, and battery state.</li>
+      <li><strong>Backend integration:</strong> the server polls the SwitchBot API periodically with authenticated request headers, maintains status for each device, and exposes current values to the frontend.</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="modal-bg" id="modal-delta" onclick="closeOnBg(event,'delta')">
+  <div class="modal">
+    <style>
+      .modal .nsp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px;}
+      .modal .nsp-stats .cdr-stat{min-width:0;}
+      .modal .nsp-stats .cdr-stat b{display:block;white-space:nowrap;font-size:clamp(24px,4vw,30px);line-height:1.15;margin-bottom:4px;}
+    </style>
+    <button class="close" onclick="closeModal('delta')">✕</button>
+    <h3>Compliant Delta-Parallel Robot</h3>
+    <div class="tags"><span>Compliant Mechanisms</span><span>Topology Optimization</span><span>Finite Element Analysis</span><span>OpenCV</span><span>Dynamixel</span></div>
+    <div class="ph-lg" style="max-width:50%;margin:16px auto 8px;"><img src="Images/DSC_0250.JPG" alt="Compliant delta-parallel robot — built prototype"></div>
+
+    <h4>Overview</h4>
+    <p>Rigid delta robots are precise but damage delicate items on contact such as vegetables , and get heavier and more expensive to scale as a result. I designed a delta-parallel robot with topology-optimized links that stay stiff along the drive axis but flex on impact — absorbing collisions without losing positioning accuracy, at a fraction of the weight and cost of an all-metal arm.</p>
+    <p><strong>My role:</strong> I designed the mechanism as a part of my master's research, ran the topology optimization and FEA validation on the link geometry, built the physical prototype, and built a custom vision-based tracking system to physically test real-world deformability against the simulation.</p>
+
+    <div class="nsp-stats" aria-label="Key results">
+      <div class="nsp-stat" style="text-align:center;"><b>+57%</b><span>additional reach under deformation, vs. where a rigid link would've stopped</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>1.15 → 2.07</b><span>X/Y displacement ratio, FEA: solid vs. optimized link</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>≤4.1mm</b><span>whole-robot positioning precision (std. dev.), free motion, vision-tracked</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>36%</b><span>Reduction of weight after FEA modeling </span></div>
+    </div>
+
+    <h4>Compliant Link Design</h4>
+    <p>The core idea: give the link anisotropic stiffness instead of uniform rigidity — stiff enough along the drive axis to hold positioning accuracy, compliant enough orthogonally to deform on impact instead of transmitting force to the produce.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Topology-optimized links:</b> link geometry optimized for directional (anisotropic) structural strength rather than uniform stiffness, transferring drive force efficiently while staying flexible on lateral impact.</li>
+      <li style="margin-bottom:8px;"><b>3D-printed ABS/PLA:</b> semi-flexible plastics in place of machined metal links, cutting both weight and per-unit manufacturing cost.</li>
+      </ul>
+    <div class="ph-lg" style="max-width:70%;margin:16px auto 8px;"><img src="Images/Picture12.png" alt="Topology-optimized compliant link, close-up"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: Topology-optimized link geometry.</p>
+
+    <h4>FEA Validation</h4>
+    <p>Run per arm, not on the full assembly: simulate the link's displacement under load in the two orthogonal directions, then take the ratio of X-direction displacement to Y-direction displacement. A higher ratio means more give in the intended flex direction relative to the intended stiff direction — exactly the behavior needed to absorb a hit without damaging whatever the arm touches.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Method:</b> FEA in CREO Parametric Simulate, comparing a solid-stem link against the topology-optimized specimen.</li>
+      <li><b>Result:</b> X/Y displacement ratio of 1.148 for the solid link versus 2.074 for the optimized link, confirming the optimized geometry is meaningfully more anisotropic — stiffer where it needs to be, more compliant where it needs to be.</li>
+    </ul>
+    <div class="ph-lg" style="max-width:80%;margin:16px auto 8px;"><img src="Images/Picture13.png" alt="FEA simulation — X/Y displacement comparison, solid vs. optimized link"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 2: FEA displacement ratio, solid vs. optimized link.</p>
+
+    <h4>Physical Deformability Test</h4>
+    <p>The FEA result only proves the design on paper, so I ran a separate physical test on the built link to confirm — and quantify — how it actually deforms under load. This is the result the whole design is really justified by.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Method:</b> vision-based tracking — OpenCV pose estimation on a marker fixed to the arm — measuring real displacement as the link deforms under applied load. Dynamixel MX-28AR servos drive the parallelogram arms.</li>
+      <li><b>Result:</b> the optimized link achieved 57% additional reach under deformation, physically measured. That extra give is what lets the arm yield on contact instead of transmitting full force — the mechanism actually doing its job of protecting a plant or fragile item it touches.</li>
+    </ul>
+    <div class="ph-lg" style="max-width:80%;"><img src="Images/Screencast from 20220822.gif" alt="Physical deformability test — vision-tracked arm deflection under load"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 3: Physical deformability test, vision-tracked.</p>
+
+    <h4>Failure Mode & Collision Testing</h4>
+    <p>Compliance introduces its own risk: a link that bends can also let the ball joint work loose. I quantified that risk before calling the design safe, then tested the full robot under an actual collision.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Failure mode analysis:</b> modeled ball-joint dislocation from link deflection under collision; worst-case clearance came out to 39.52% of the ball-joint radius — confirmed negligible to end-effector precision.</li>
+      <li><b>Collision response:</b> under lateral impact on the full robot, the compliant arm still reaches 68% of its target displacement beyond where a rigid link would've stopped — absorbing impact force through deformation instead of transmitting it.</li>
+    </ul>
+
+    <h4>Outcome</h4>
+    <p>Published/presented at RSJ2022.</p>
+    <p>Implemented on autonomous mobile platform to observe pets and diseases under foliage.</p>
+  </div>
+</div>
+
+
+<div class="modal-bg" id="modal-humanoid" onclick="closeOnBg(event,'humanoid')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('humanoid')">✕</button>
+    <h3>Humanoid Robot — Human like facial movement mimicry</h3>
+    <div class="tags"><span>Compliant Joints</span><span>Humanoid Robotics</span><span>Motion Mimicry</span></div>
+    <div class="ph-lg"><img src="Images/Picture5.png" alt="Compliant delta-parallel robot — built prototype"></div>
+
+
+    <h4>Brief description</h4>
+    <p>Part of a humanoid robot platform researching human-like motion manifestation. Developed a compact eye mechanism using a compliant joint that is damped and zero-backlash, letting it mimic a user's eye movement fast and immediately without the jitter a rigid joint would introduce.</p>
+
+    <h4>System architecture </h4>
+    <div class="ph-lg" style="max-width:100%;"><img src="Images/m3.jpg" alt="System architecture and data flow"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: System architecture and data flow.</p>
+
+    <div class="ph-lg" style="max-width:50%;"><img src="Images/MOV_0795.gif" alt="System in function"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 2: Humanoid mimicking the emotions of person in front.</p>
+
+    <h4> Extremely compact eye mechanism with compliant joint </h4>
+    <div class="ph-lg" style="max-width:80%;"><img src="Images/Picture20.jpg" alt="System architecture and data flow"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 3: Eye mechanism with compliant joint.</p>
+
+
+    <h4>Recognition</h4>
+    <p>Awarded 1st place at the KUAS Research Exchange Conference.</p>
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-cra" onclick="closeOnBg(event,'cra')">
+  <div class="modal">
+    <style>
+      .modal .nsp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px;}
+      .modal .nsp-stats .cdr-stat{min-width:0;}
+      .modal .nsp-stats .cdr-stat b{display:block;white-space:nowrap;font-size:clamp(24px,4vw,30px);line-height:1.15;margin-bottom:4px;}
+    </style>
+    <button class="close" onclick="closeModal('cra')">✕</button>
+    <h3>Autonomous Field-Scouting Platform for Under-Foliage Crop Inspection</h3>
+    <div class="tags"><span>Delta Robot</span><span>ROS 2</span><span>SLAM</span><span>YOLO</span><span>Ardupilot</span><span>Field Robotics</span></div>
+    <div class="ph-lg"><img src="Images/Picture10.png" alt="Crawler-based mobile platform with delta arm — field prototype"></div>
+
+    <h4>Overview</h4>
+    <p>Ground robots can monitor crops, but none could reach the areas where disease actually starts — underneath the leaf canopy, close to the stem — without damaging the plant. I built a crawler-based mobile platform carrying a compliant 4-DOF delta arm that autonomously detects plants, then reaches beneath their foliage to photograph pathogens conventional overhead scanning can't see.</p>
+    <p><strong>My role:</strong> Designed and developed an autonomous crawler platform integrated with a compliant delta-arm manipulator capable of reaching beneath vegetable foliage, implemented the YOLO-based detection pipeline and PID arm-control program, and integrated both with the ORB-SLAM and ROS/Ardupilot navigation stack.</p>
+    <div class="nsp-stats" aria-label="Key results">
+      <div class="nsp-stat" style="text-align:center;"><b>Stereo SLAM</b><span>RealSense D435i depth vision feeding real-time plant detection and tracking</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>Dual RTK</b><span>fused with SLAM for centimeter-level heading and position accuracy</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>&lt;5cm</b><span>SLAM absolute trajectory error (ORB-SLAM3), outperforming GPS-only navigation</span></div>
+      <div class="nsp-stat" style="text-align:center;"><b>3 strategies</b><span>data-gathering strategies designed, built, and field-compared</span></div>
+    </div>
+
+    <h4>System Architecture</h4>
+    <p>The platform pairs a tracked crawler base (Ardupilot + ORB-SLAM3 pose estimation, 4hr / 290Wh continuous operation, 25kg payload) with the delta arm mounted overhead. Two programs run independently and exchange data over ROS: a detection pipeline that locates plants and tracks the nearest target, and an arm-control program that drives the manipulator toward it with PID control.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Detection pipeline:</b> YOLO-based plant detection extracts target position, offset-from-center, and confidence per frame, packaged and published to ROS.</li>
+      <li><b>Arm control:</b> consumes the detection packet, computes the closest target, and drives the delta arm's 3 base servos plus a 4th-axis camera tilt to view upward from beneath the canopy.</li>
+    </ul>
+    <div class="ph-lg"><img src="Images/Picture8.png" alt="System architecture — crawler platform, delta arm, and detection/control flow"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 1: Platform architecture and detection/arm-control data flow.</p>
+
+    <h4>Data-Collection Methods, Field-Compared</h4>
+    <p>Rather than assume the delta arm was worth the added complexity, I designed three data-gathering strategies and tested all three against potted broccoli under real field conditions to quantify the tradeoff.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Passive (in-motion):</b> continuous overhead imaging while driving — fastest (5s), but the resulting 3D reconstruction had no information beneath the leaves.</li>
+      <li style="margin-bottom:8px;"><b>Active (stop-and-scan):</b> arm circles each plant at multiple heights for a 360° view — 21× slower (105s), meaningfully better leaf-surface and edge detail, but still couldn't see under the canopy.</li>
+      <li><b>Under-foliage (delta arm):</b> camera tilted upward and inserted beneath the leaves — the only method that successfully imaged pathogens on the underside of leaves and stalks.</li>
+    </ul>
+    <div class="ph-lg"><img src="Images/Picture9.png" alt="Three data-gathering methods: passive linear, active concentric, under-foliage"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 2: The three data-gathering strategies tested.</p>
+
+    <h4>Field Results & Failure Modes</h4>
+    <p>I treated the field test as validation, not a demo — and documented where the design still fell short, since that's what drives the next revision.</p>
+    <ul style="margin:6px 0 4px;padding-left:20px;font-size:14.5px;color:#333;">
+      <li style="margin-bottom:8px;"><b>Result:</b> the under-foliage method was the only one of the three to successfully collect data from occluded regions where pathogens actually originate.</li>
+      <li style="margin-bottom:8px;"><b>Failure mode — snagging:</b> outward-reaching leaves occasionally caught in the arm's ball joints during continuous motion, causing minor tearing.</li>
+      <li style="margin-bottom:8px;"><b>Failure mode — imaging:</b> chromatic aberration appeared in upward-angled shots under direct sunlight, and photogrammetry coverage still failed on drooping/occluding leaves.</li>
+      <li><b>Design limit identified:</b> arm compliance was insufficient for young, tender stems in continuous motion — flagged rigidity/payload threshold as the target for the next iteration.</li>
+    </ul>
+    <div class="ph-lg"><img src="Images/2026-09-23 00-44-45.gif" alt="Under-foliage results — pathogen detection beneath leaves and stalks"></div>
+    <p style="text-align:center;font-size:12px;color:#7a7568;margin-top:-10px;">Figure 3: Pathogens (red markers) imaged beneath the canopy — the only method to succeed here.</p>
+
+    <h4>Outcome</h4>
+    <p>Published/presented at SII 2024 (System Integration) and RSJ2022.</p>
+    <p>This work formed my Master's research dissertation at Kyoto University of Advanced Science.</p>
+  </div>
+</div>
+
+<script>
+  function openModal(id){
+    document.getElementById('modal-'+id).classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(id){
+    document.getElementById('modal-'+id).classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function closeOnBg(e,id){
+    if(e.target.id === 'modal-'+id) closeModal(id);
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal-bg.open').forEach(function(m){ m.classList.remove('open'); });
+      document.body.style.overflow='';
+    }
+  });
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    var l = document.getElementById('navLinks');
+    l.style.display = (l.style.display === 'flex') ? 'none' : 'flex';
+    l.style.flexDirection = 'column';
+    l.style.position='absolute';l.style.top='66px';l.style.right='28px';
+    l.style.background='var(--paper)';l.style.border='1px solid var(--line)';l.style.borderRadius='10px';l.style.padding='14px 20px';
+  });
+</script>
+
+</body>
+</html>
